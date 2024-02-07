@@ -1,0 +1,24 @@
+
+.table-container {
+  width: 50%; /* Adjust the width as needed */
+  margin: auto; /* Center the table */
+  margin-top: 10rem;
+}
+
+ table {
+  text-align: center;
+  width: 100%;
+  
+}
+nav{
+  background-color: aquamarine;
+}
+
+.App{
+  margin-top: 5rem;
+  margin-left: 30px;
+}
+
+.f1{
+margin-left: 70%;
+}
