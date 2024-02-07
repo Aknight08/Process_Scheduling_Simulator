@@ -2,6 +2,11 @@ import React from "react";
 
 export default function GanntChart({props})   {
 
+    function getEachProcess(item){
+        return (
+            <td>{item}.process</td>
+        );
+    }
     
     return(
         <div>
@@ -12,16 +17,14 @@ export default function GanntChart({props})   {
                         <tbody>
                         <tr>
                             <td>Process ID</td>
+                            {props.map((item) => <td>{item.process}</td>)}
                             
                         </tr>
                         <tr>
                             <td>Completion Time</td>
                         </tr>
-                        <tr>
-                            <td>{props[0].process}</td>
-                        </tr>
-
                         
+                                                
                         {    /*
                             inputarr.map(
                             (info, ind) => {
