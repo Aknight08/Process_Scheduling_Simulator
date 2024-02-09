@@ -1,0 +1,40 @@
+/* a {
+    color: inherit; /* Inherit the text color from parent 
+    text-decoration: none; /* Remove default underline *
+} */
+
+/* ul li a:hover {
+    text-decoration: underline; 
+    text-decoration-color: red ;
+    margin-bottom: 5px;
+} */
+
+/* .nav-links ul li a:hover {
+    border-bottom: 3px solid red; /* Add red underline on hover *
+    padding-bottom: 2px; /* Adjust space between text and underline 
+} */
+
+
+.table-container {
+    width: 50%; /* Adjust the width as needed */
+    margin: auto; /* Center the table */
+    margin-top: 10rem;
+  }
+  
+   table {
+    text-align: center;
+    width: 100%;
+    
+  }
+  nav{
+    background-color: aquamarine;
+  }
+  
+  .App{
+    margin-top: 5rem;
+    margin-left: 30px;
+  }
+  
+  .f1{
+  margin-left: 70%;
+  }
