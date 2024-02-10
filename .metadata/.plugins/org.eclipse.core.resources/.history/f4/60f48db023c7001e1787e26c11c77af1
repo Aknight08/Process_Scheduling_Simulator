@@ -1,0 +1,51 @@
+package com.simulator.service;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import com.simulator.algorithms_model.Process; 
+
+public class SJFImpl {
+	
+	public void scheduleProcess(List<Process> processesList) {
+		int numOfProcesses =processesList.size();
+		//set time = 0
+		int currentTime =0;
+		
+		
+		int [] completionTime = new int[numOfProcesses];
+		int [] turnaroundTime = new int [numOfProcesses];
+		int [] waitingTime = new int [numOfProcesses];
+		
+		
+		//sort processes according to arrival time
+		Collections.sort(processesList,(p1,p2)->p1.getArrivalTime() - p2.getArrivalTime() );
+		
+		ArrayList<Process> completedProList = new ArrayList<>();
+		
+		while(!processesList.isEmpty()) {
+			Process currentProcess = processesList.remove(0);
+			currentTime += currentProcess.getBurstTime() ;
+			completedProList.add(currentProcess);
+		}
+		//to calculate turaround time 
+		double totalTurnaroundTime = 0 ;
+		for (Process p : completedProList) {
+			totalTurnaroundTime += (currentTime - p.getArrivalTime());
+		}
+		
+		double avgTurnaroundTime = totalTurnaroundTime / numOfProcesses ;
+		
+		
+		}
+		
+		
+		
+		
+		
+	}
+	
+	
+
+}

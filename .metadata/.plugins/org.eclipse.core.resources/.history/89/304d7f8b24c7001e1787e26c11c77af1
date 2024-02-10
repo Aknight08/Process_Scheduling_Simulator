@@ -1,0 +1,55 @@
+package com.simulator.controller;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+class Process implements Comparable<Process> {
+    int id;
+    int arrivalTime;
+    int burstTime;
+
+    public Process(int id, int arrivalTime, int burstTime) {
+        this.id = id;
+        this.arrivalTime = arrivalTime;
+        this.burstTime = burstTime;
+    }
+
+    @Override
+    public int compareTo(Process p) {
+        return Integer.compare(this.burstTime, p.burstTime);
+    }
+}
+
+class NonPreemptiveSJF {
+    public static void main(String[] args) {
+        ArrayList<Process> processes = new ArrayList<>();
+        processes.add(new Process(1, 0, 3));
+        processes.add(new Process(2, 1, 5));
+        processes.add(new Process(3, 2, 2));
+        processes.add(new Process(4, 3, 8));
+
+        // Sort processes based on arrival time
+        Collections.sort(processes, (p1, p2) -> p1.arrivalTime - p2.arrivalTime);
+
+        int currentTime = 0;
+        int totalProcesses = processes.size();
+        ArrayList<Process> completedProcesses = new ArrayList<>();
+
+        while (!processes.isEmpty()) {
+            Process currentProcess = processes.remove(0);
+            System.out.println("Executing Process " + currentProcess.id + " from time " + currentTime +
+                    " to time " + (currentTime + currentProcess.burstTime));
+            currentTime += currentProcess.burstTime;
+            completedProcesses.add(currentProcess);
+        }
+
+        // Calculate average turnaround time
+        int totalTurnaroundTime = 0;
+        for (Process p : completedProcesses) {
+            totalTurnaroundTime += (currentTime - p.arrivalTime);
+        }
+        double avgTurnaroundTime = (double) totalTurnaroundTime / totalProcesses;
+        System.out.println("Average Turnaround Time: " + avgTurnaroundTime);
+    }
+}
+

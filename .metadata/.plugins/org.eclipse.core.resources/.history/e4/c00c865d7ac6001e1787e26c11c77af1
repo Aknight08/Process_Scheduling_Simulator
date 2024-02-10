@@ -1,0 +1,13 @@
+package com.simulator.algorithms_model;
+
+import org.springframework.boot.SpringApplication;
+
+public class Shortest_Job_First {
+	
+	private String Id_name;
+	private int arrival_time,burst_time;
+	
+	
+	
+	
+}

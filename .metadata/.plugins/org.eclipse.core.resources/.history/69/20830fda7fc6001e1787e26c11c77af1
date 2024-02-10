@@ -1,0 +1,5 @@
+package com.simulator.service;
+
+public class BurstTimeComparator {
+
+}

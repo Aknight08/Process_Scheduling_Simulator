@@ -1,0 +1,41 @@
+package com.simulator.service;
+
+import java.util.ArrayList;
+import com.simulator.algorithms_model.Process;
+public class RR_Imlp {
+		
+	public void scheduleProcess(ArrayList<Process> processesList) {
+		
+			int numOfProcesses = processesList.size();
+			int timeSlice = 0 ;
+			int[] remainingTime = new int [numOfProcesses];
+			int currentTime = 0;
+			for(int i=0 ; i<numOfProcesses ; i++) {
+				remainingTime[i] = processesList.get(i).getBurstTime();
+			}
+			
+			while(true) {
+				boolean done = true ;
+				for (int i = 0 ; i< numOfProcesses ;i++) {
+					if(remainingTime[i]>0) {
+						done = false ;
+						//if(remainingTime[i]>processesList.get(i).getTimeSlice()) {
+						if(remainingTime[i]>timeSlice) {	
+							currentTime += timeSlice ;
+							remainingTime[i] -= timeSlice;	
+						}
+						else {
+							currentTime += remainingTime[i];
+							remainingTime[i]=0;
+							
+						}
+					}
+				}
+				if (done)
+					break;
+			}
+			
+			
+			
+	}
+}
