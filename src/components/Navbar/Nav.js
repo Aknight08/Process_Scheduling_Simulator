@@ -40,7 +40,7 @@ export default function Nav() {
                 </div> */}
 
         
-             <div className='position-sticky text-light'>
+             <div className= 'position-sticky text-light'>
                 <nav
                     className="navbar navbar-expand-sm navbar-dark bg-dark "
                 >

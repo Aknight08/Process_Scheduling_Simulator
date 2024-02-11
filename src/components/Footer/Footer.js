@@ -20,7 +20,7 @@ export default function Footer() {
                                 ><i class="bi bi-youtube"></i></a>
 
                                 {/* <!-- Twitter --> */}
-                                <a class="btn btn btn-floating m-1" href="#!" role="button"
+                                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
                                 ><i class="bi bi-twitter-x"></i></a>
 
                                 {/* <!-- Google --> */}
@@ -39,7 +39,7 @@ export default function Footer() {
 
                                 {/* <!-- Github --> */}
                                 <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">                                    
-                                    <img src={icon} alt="github-icon"></img>
+                                    <i class="bi bi-github"></i> 
                                 </a>
                             </section>
                             {/* <!-- Section: Social media --> */}
