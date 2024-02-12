@@ -40,9 +40,9 @@ export default function Nav() {
                 </div> */}
 
         
-             <div className= 'position-sticky text-light'>
+             <div className='text-light'>
                 <nav
-                    className="navbar navbar-expand-sm navbar-dark bg-dark "
+                    className="navbar navbar-expand-sm sticky-top navbar-dark bg-dark "
                 >
                     <div className="container">
                         <a className="navbar-brand" href="https://ravipatel1309.github.io/CPUScheduler/" target="_blank" rel="noreferrer">CPU Scheduling</a>

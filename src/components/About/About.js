@@ -6,8 +6,8 @@ import 'font-awesome/css/font-awesome.min.css';
 
 
 const TeamMember = ({ name, title, description }) => (
-  <div className="col-sm-6 col-lg-3 my-auto">
-    <div className="box shadow-sm p-4 bg-light">
+  <div className="col-sm-6 col-lg-3 my-auto" >
+    <div className="box shadow-sm p-4 "style={{backgroundColor:"#E3EDE8"}} >
       <div className="image-wrapper mb-3">
         {/* Assuming you have an image URL in your team data, otherwise replace {image} with the correct image URL */}
         <img className="img-fluid" src={image} alt="..." />
@@ -67,8 +67,12 @@ const About = () => {
   ];
 
   return (
-    <div className="container">
-      <div className="row vh-100">
+    <div className="container ">
+      <div className="row my-4">
+        <div>
+          <h1 className='text-center'>Our Team</h1>
+          <br></br>
+        </div>
         {team.map((member, index) => (
           <TeamMember
             key={index} // Use index as key if no unique identifier available

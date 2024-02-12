@@ -16,19 +16,16 @@ import About from "./components/About/About.js";
 export default function App() {
   return (
     <div>
-      <Nav/>
+      <Nav />
       <Router>
-      
-      {/* <Home/> */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Simulator" element={<Simulator />} />
-        <Route path="/Docs" element={< Docs/>} />
-        <Route path="/About" element={<About />} />
-        {/* <Route path="/Home" element={<Trial />} */}
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Simulator" element={<Simulator />} />
+          <Route path="/Docs" element={< Docs/>} />
+          <Route path="/About" element={<About />} />
+        </Routes>
       </Router>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
