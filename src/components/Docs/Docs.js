@@ -16,6 +16,7 @@ export default function Docs() {
   return (
     <div>
       <div>
+      <br></br>
         <h1 className='text text-center my-5'>Documentation</h1>
         <br></br>
         <br></br>
