@@ -1,8 +1,11 @@
 package com.simulator.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import com.simulator.algorithms_model.Process;
+import com.simulator.algorithms_model.ProcessSimulatorResult;
 
 @Service
 public class SchedulerService {
@@ -12,23 +15,40 @@ public class SchedulerService {
 //	void runPS(List<Process> process);
 
 
-	private ProcessRepository processRepository;
-	private FCFSImpl fcfsAlgo;
+	
+	private FCFSImpl fcfsImpl;
+	private SJFImpl sjfImpl;
+	private RRImlp rrImpl;
+	private PriorityImpl priorityImpl;
 	
 	
 	
-	public SchedulerService(ProcessRepository processRepository, FCFSImpl fcfsAlgo) {
+	public SchedulerService(FCFSImpl fcfsImpl, SJFImpl sjfImpl, RRImlp rrImpl, PriorityImpl priorityImpl) {
 		super();
-		this.processRepository = processRepository;
-		this.fcfsAlgo = fcfsAlgo;
+		this.fcfsImpl = fcfsImpl;
+		this.sjfImpl = sjfImpl;
+		this.rrImpl = rrImpl;
+		this.priorityImpl = priorityImpl;
 	}
-	
-	public List<Process> scheduleProcess(List<Process> processes,String algorithm){
+
+	public ProcessSimulatorResult scheduleProcesses (List<Process>processesList,String algorithm) {
+		
 		switch(algorithm) {
 		case "FCFS":
-			void FCFSImpl(List<Process>processes);
+			return fcfsImpl.scheduleProcesses(processesList);
+		case "SJF":
+			return sjfImpl.scheduleProcesses(processesList);
+		case "Round-Robin":
+			return rrImpl.scheduleProcesses(processesList);
+		case "Priority":
+			return priorityImpl.scheduleProcesses(processesList);
+		
+		default:
+			throw new IllegalArgumentException("Invalid choice");
 		}
 	}
+
+	
 //	public List<Process> runFCFS(processexpl);
 //	
 //	

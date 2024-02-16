@@ -5,11 +5,13 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import com.simulator.algorithms_model.Process; 
+import com.simulator.algorithms_model.Process;
+import com.simulator.algorithms_model.ProcessSimulatorResult; 
 
-public class SJFImpl {
-	
-	public void scheduleProcess(List<Process> processesList) {
+public abstract class SJFImpl implements Scheduler {
+	@Override
+	public ProcessSimulatorResult scheduleProcesses(List<Process> processesList) {
+		
 		int numOfProcesses =processesList.size();
 		//set time = 0
 		int currentTime =0;
@@ -59,11 +61,23 @@ public class SJFImpl {
 		}
 		
 		double avgTurnaroundTime = totalTurnaroundTime / numOfProcesses ;
-		double avgWaitTime = totalWaitingTime / numOfProcesses ;
+		double avgWaitingTime = totalWaitingTime / numOfProcesses ;
 		
 		//WARN for testcase
 		System.out.println("Average Turnaround Time: " + avgTurnaroundTime);
         System.out.println("Average Waiting Time: " + avgWaitingTime);
+        
+        ProcessSimulatorResult result = new ProcessSimulatorResult(processesList, avgWaitingTime, avgWaitingTime, avgWaitingTime, avgWaitingTime);
+        result.setProcessesList(processesList);
+        result.setAvgTurnaroundTime(avgTurnaroundTime);
+        result.setAvgWaitingTime(avgWaitingTime);
+        result.setTotalTurnaroundTime(totalTurnaroundTime);;
+        result.setTotalWaitingTime(totalWaitingTime);
+        
+        return result;
+		
 	}
+
+	
 		
 }

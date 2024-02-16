@@ -6,7 +6,7 @@ import jakarta.persistence.Entity;
 public class Process {
 	
 	private String algorithm;
-	private String name;
+	private int id;
 	private int arrivalTime;
 	private int burstTime;
 	private int priority;
@@ -14,10 +14,10 @@ public class Process {
 	
 	
 	//Constructor for fcfs,sjf and round-robin algorithms
-	public Process(String algorithm,String name, int arrival_time, int burst_time, int priority) {
+	public Process(String algorithm,int id, int arrival_time, int burst_time, int priority) {
 		super();
 		this.algorithm = algorithm;
-		this.name = name;
+		this.id = id;
 		this.arrivalTime = arrivalTime;
 		this.burstTime = burstTime;
 		this.timeSlice= timeSlice;
@@ -25,10 +25,10 @@ public class Process {
 	
 	
 	//Constructor for priority algorithm
-	public Process(String algorithm,String name, int arrivalTime, int burstTime) {
+	public Process(String algorithm,int id, int arrivalTime, int burstTime) {
 		super();
 		this.algorithm = algorithm;
-		this.name = name;
+		this.id = id;
 		this.arrivalTime = arrivalTime;
 		this.burstTime = burstTime;
 		this.priority = priority;
@@ -46,12 +46,12 @@ public class Process {
 		this.algorithm = algorithm;
 	}
 
-	public String getName() {
-		return name;
+	public int getId() {
+		return id;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public int getArrivalTime() {

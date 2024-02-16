@@ -1,0 +1,9 @@
+package com.simulator.service;
+
+import java.util.List;
+
+public interface Scheduler {
+	
+
+	List<Integer> scheduleProcesses(List<com.simulator.algorithms_model.Process> processesList);
+}

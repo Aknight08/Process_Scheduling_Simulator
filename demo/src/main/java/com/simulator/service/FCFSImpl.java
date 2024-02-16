@@ -2,11 +2,12 @@ package com.simulator.service;
 
 import java.util.List;
 import com.simulator.algorithms_model.Process;
-public class FCFSImpl {
+import com.simulator.algorithms_model.ProcessSimulatorResult;
+public abstract class FCFSImpl implements Scheduler{
 	
-	public void scheduleProcesses(List<Process> processesList) {
-		
-		int numOfProcesses =processesList.size();
+	@Override
+	public ProcessSimulatorResult scheduleProcesses(List<Process> processesList) {
+int numOfProcesses =processesList.size();
 		
 		int [] completionTime = new int[numOfProcesses];
 		int [] turnaroundTime = new int [numOfProcesses];
@@ -41,8 +42,18 @@ public class FCFSImpl {
 		System.out.println("Average Turnaround Time: " + avgTurnaroundTime);
         System.out.println("Average Waiting Time: " + avgWaitingTime);
 		
-		
-	}		
+        ProcessSimulatorResult result = new ProcessSimulatorResult(processesList, avgWaitingTime, avgWaitingTime, avgWaitingTime, avgWaitingTime);
+        result.setProcessesList(processesList);
+        result.setAvgTurnaroundTime(avgTurnaroundTime);
+        result.setAvgWaitingTime(avgWaitingTime);
+        result.setTotalTurnaroundTime(totalTurnaroundTime);;
+        result.setTotalWaitingTime(totalWaitingTime);
+        
+        return result ;
+        
+	}
+
+			
 }
 	
 	
